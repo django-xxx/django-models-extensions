@@ -22,3 +22,7 @@ Usage
     class MyModel(models.Model):
         upload = models.FileField(upload_to=upload_path)
 
+        @property
+        def upload_url(self):
+            return upload_file_url(self.upload)
+
