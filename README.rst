@@ -17,9 +17,9 @@ Usage
 
 ::
 
-    from models_ext import upload_path
+    from models_ext import BaseModelMixin, upload_path, upload_file_url
 
-    class MyModel(models.Model):
+    class MyModel(BaseModelMixin):
         upload = models.FileField(upload_to=upload_path)
 
         @property
