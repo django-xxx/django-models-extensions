@@ -11,3 +11,18 @@ class BaseModelMixin(models.Model):
 
     class Meta:
         abstract = True
+
+
+class SexModelMixin(models.Model):
+    MALE = 1
+    FEMALE = 0
+
+    SEX_TUPLE = (
+        (MALE, u'男'),
+        (FEMALE, u'女'),
+    )
+
+    sex = models.BooleanField(_(u'sex'), choices=SEX_TUPLE, default=MALE, help_text=_(u'Sex'), db_index=True)
+
+    class Meta:
+        abstract = True
