@@ -18,7 +18,7 @@ setup(
     author='Hackathon',
     author_email='kimi.huang@brightcells.com',
 
-    packages=['models_ext'],
+    packages=['django_models_ext'],
     py_modules=[],
     install_requires=['TimeConvert'],
 
