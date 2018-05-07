@@ -156,8 +156,11 @@ class ProvinceModelMixin(models.Model):
         ("澳门特别行政区", "澳门特别行政区")
     )
 
-    province_code = models.CharField(_(u'province_code'), max_length=6, choices=PROVINCE_CODE_TUPLE, default='110000', help_text=_(u'province_code'), db_index=True)
-    province_name = models.CharField(_(u'province_name'), max_length=10, choices=PROVINCE_NAME_TUPLE, default=u'北京市', help_text=_(u'province_name'), db_index=True)
+    PROVINCE_DEFAULT_CODE = '110000'
+    PROVINCE_DEFAULT_NAME = u'北京市'
+
+    province_code = models.CharField(_(u'province_code'), max_length=6, choices=PROVINCE_CODE_TUPLE, default=PROVINCE_DEFAULT_CODE, help_text=_(u'province_code'), db_index=True)
+    province_name = models.CharField(_(u'province_name'), max_length=10, choices=PROVINCE_NAME_TUPLE, default=PROVINCE_DEFAULT_NAME, help_text=_(u'province_name'), db_index=True)
 
     class Meta:
         abstract = True
@@ -315,8 +318,11 @@ class ProvinceShortModelMixin(models.Model):
         ("澳门", "澳门")
     )
 
-    province_code = models.CharField(_(u'province_code'), max_length=6, choices=PROVINCE_CODE_TUPLE, default='110000', help_text=_(u'province_code'), db_index=True)
-    province_name = models.CharField(_(u'province_name'), max_length=3, choices=PROVINCE_NAME_TUPLE, default=u'北京', help_text=_(u'province_name'), db_index=True)
+    PROVINCE_DEFAULT_CODE = '110000'
+    PROVINCE_DEFAULT_NAME = u'北京'
+
+    province_code = models.CharField(_(u'province_code'), max_length=6, choices=PROVINCE_CODE_TUPLE, default=PROVINCE_DEFAULT_CODE, help_text=_(u'province_code'), db_index=True)
+    province_name = models.CharField(_(u'province_name'), max_length=3, choices=PROVINCE_NAME_TUPLE, default=PROVINCE_DEFAULT_NAME, help_text=_(u'province_name'), db_index=True)
 
     class Meta:
         abstract = True
