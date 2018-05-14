@@ -15,5 +15,13 @@ def upload_path(instance, filename):
     )
 
 
-def upload_file_url(file_path):
-    return file_path and ('{0}{1}'.format(settings.DOMAIN if hasattr(settings, 'DOMAIN') else '', file_path.url)) or ''
+def upload_file_url(image_field_file):
+    return image_field_file and ('{0}{1}'.format(settings.DOMAIN if hasattr(settings, 'DOMAIN') else '', image_field_file.url)) or ''
+
+
+def upload_file_path(image_field_file):
+    return image_field_file and image_field_file.name or ''
+
+
+def upload_file_store_path(image_field_file):
+    return image_field_file and image_field_file.path or ''
