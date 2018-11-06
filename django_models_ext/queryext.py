@@ -11,3 +11,4 @@ def get_or_create_ext(model, data=None, defaults=None, select_for_update=False, 
         for key, value in defaults.iteritems():
             setattr(obj, key, value)
         obj.save()
+    return obj, created
