@@ -14,15 +14,17 @@ class BaseModelMixin(models.Model):
 
 
 class SexModelMixin(models.Model):
+    UNKNOWN = 0
     MALE = 1
-    FEMALE = 0
+    FEMALE = 2
 
     SEX_TUPLE = (
+        (UNKNOWN, u'未知'),
         (MALE, u'男'),
         (FEMALE, u'女'),
     )
 
-    sex = models.BooleanField(_(u'sex'), choices=SEX_TUPLE, default=MALE, help_text=_(u'Sex'), db_index=True)
+    sex = models.IntegerField(_(u'sex'), choices=SEX_TUPLE, default=UNKNOWN, help_text=_(u'Sex'), db_index=True)
 
     class Meta:
         abstract = True
