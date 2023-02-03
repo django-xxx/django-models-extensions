@@ -11,7 +11,8 @@ setup(
     version=version,
     keywords='Django Models Ext Extensions',
     description='Django Models Extensions',
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
 
     url='https://github.com/django-xxx/django-models-extensions',
 
@@ -20,7 +21,7 @@ setup(
 
     packages=['django_models_ext'],
     py_modules=[],
-    install_requires=['TimeConvert'],
+    install_requires=['TimeConvert', 'django-six'],
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
